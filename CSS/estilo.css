@@ -2,21 +2,44 @@
   background-color: #6f7277;
 }
 
-.contenedor{
-	background-color: #21281b;
-	width: 150vh;
-	padding: 5px;
-  height: 80vh;
+.contenedorG{
+  background-color: lime;
+  width: 150vh;
+  padding: 5px;
+  height: 70vh;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 30px;
+  border-radius: 2px;
+}
+
+.contenedorCodigo{
+	background-color: #21281b;
+	width: 20%;
+	padding: 5px;
+  height: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding-bottom: 30px;
 	border-radius: 2px;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: center;
+}
+
+
+.contenedorAnim{
+	background-color: #21281b;
+	width: 60%;
+	padding: 5px;
+  height: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 30px;
+	border-radius: 2px;
 }
 
 .cuadrito{
@@ -35,7 +58,7 @@
   border-width: 2px;
   border-color: gray;
   border-radius: 7px;
-  visibility: hidden;
+  visibility: visible;
 }
 .cuadritoVacio{
   width: 20px;
@@ -53,41 +76,6 @@
 }
 
 .loscuadritosN1{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN2{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN3{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN4{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN5{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN6{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN7{
-	background-color: #21281b;
-  visibility: visible;
-}
-
-.loscuadritosN8{
 	background-color: #21281b;
   visibility: visible;
 }
