@@ -1,0 +1,93 @@
+*{
+  background-color: #6f7277;
+}
+
+.contenedor{
+	background-color: #21281b;
+	width: 150vh;
+	padding: 5px;
+  height: 80vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+	border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+
+.cuadrito{
+  width: 40px;
+  height: 40px;
+  font-family: arial;
+  font-style: italic;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  font-weight: bolder;
+  color: white;
+  float: left;
+  background-color: #3a424f;
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 7px;
+  visibility: hidden;
+}
+.cuadritoVacio{
+  width: 20px;
+  height: 40px;
+  font-family: arial;
+  font-style: italic;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bolder;
+  background-color: #21281b;
+  float: left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #21281b;
+}
+
+.loscuadritosN1{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN2{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN3{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN4{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN5{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN6{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN7{
+	background-color: #21281b;
+  visibility: visible;
+}
+
+.loscuadritosN8{
+	background-color: #21281b;
+  visibility: visible;
+}

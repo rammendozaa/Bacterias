@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  </head>
+    <title>Ordenamiento Merge Sort</title>
+    <link rel="stylesheet"  href="CSS/estilo.css">
+    <script src="JS/jquery.js"></script>
+  	<script src="JS/action.js"></script>
+  </head>
+  <body>
+    <h1 style="text-align: center">Algoritmo de Ordenamiento por Combinación (Merge Sort)</h1>
+    <button id="boton">CLick</button>
+    <div class="contenedor">
+      <div class="loscuadritosN1" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadritoVacio"></div>
+        </div>
+      <div class="loscuadritosN2" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadritoVacio"></div>
+      </div>
+      <div class="loscuadritosN3" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">0</div>dd
+        <div class="cuadrito">-21</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+      </div>
+      <div class="loscuadritosN4" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">5</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">51</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">0</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadritoVacio"></div>
+      </div>
+      <div class="loscuadritosN5" style="margin: auto">
+        <div class="cuadrito">82</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">5</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">51</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">35</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">0</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-21</div>
+      </div>
+      <div class="loscuadritosN6" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">82</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">5</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadritoVacio"></div>
+      </div>
+
+      <!--
+      <div class="loscuadritosN7" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadrito">82</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+      </div>
+      <div class="loscuadritosN8" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+      </div>
+      <div class="loscuadritosN9" style="margin: auto">
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadrito">-53</div>
+        <div class="cuadrito">-21</div>
+        <div class="cuadrito">-2</div>
+        <div class="cuadrito">0</div>
+        <div class="cuadrito">5</div>
+        <div class="cuadrito">35</div>
+        <div class="cuadrito">42</div>
+        <div class="cuadrito">51</div>
+        <div class="cuadrito">82</div>
+        <div class="cuadrito">115</div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+        <div class="cuadritoVacio"></div>
+      </div>
+    -->
+    </div>
+  </body>
+
+</html>
