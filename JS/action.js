@@ -57,7 +57,7 @@ function crearRandom(){
     {
       matriz[i] = [];
       for (var j = 0 ; j < columnas ; j++)
-          matriz[i][j]= prompt('Ingrese el valor de la posición: (' + i + ', ' + j + ')')
+          matriz[i][j]= parseInt(prompt('Ingrese el valor de la posición: (' + i + ', ' + j + ')'));
     }
     $(".contenedorQuimico").css("width", (columnas * 39) + "px");
     $(".contenedorQuimico").css("height", (filas * 39) + "px");
@@ -118,8 +118,8 @@ function crearRandom(){
       celda = document.createElement("div");
       celda.className="cuadrito";
       matrizAn[i] = [];
-      matrizAn[i][0] = (matriz[i][0]) + matrizAn[i - 1][0];
-      celda.innerText = (matrizAn[i][0]).toString();
+      matrizAn[i][0] = matriz[i][0] + matrizAn[i - 1][0];
+      celda.innerText = matrizAn[i][0];
       $(celda).attr("id",'matAn_'+ i +'_0');
       fila.append(celda);
       for(var j = 1 ; j < columnas ; j++)
@@ -127,7 +127,7 @@ function crearRandom(){
         celda = document.createElement("div");
         celda.className = "cuadrito";
         matrizAn[i][j] = Math.min(matrizAn[i][j - 1], matrizAn[i - 1][j]) + matriz[i][j];
-        celda.innerText = (matrizAn[i][j]).toString();
+        celda.innerText = matrizAn[i][j];
         $(celda).attr("id", 'matAn_'+ i +'_'+ j +'');
         fila.append(celda);
       }
