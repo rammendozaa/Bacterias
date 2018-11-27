@@ -1,81 +1,76 @@
 *{
-  background-color: #6f7277;
+  background-color: #c3c6cc;
 }
 
 .contenedorG{
-  background-color: lime;
-  width: 150vh;
+  background-color: #b1bacc;
+  width: 95%;
   padding: 5px;
-  height: 70vh;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px;
   padding-bottom: 30px;
-  border-radius: 2px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .contenedorCodigo{
-	background-color: #21281b;
-	width: 20%;
+	width: 97%;
 	padding: 5px;
-  height: 90%;
+  height: 40%;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
   padding-bottom: 30px;
-	border-radius: 2px;
+	border-radius: 15px;
+  float: left;
+  text-align: left;
 }
 
 
 .contenedorAnim{
 	background-color: #21281b;
-	width: 60%;
 	padding: 5px;
-  height: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  border-radius: 2px;
+  overflow:hidden;
+  display:inline-block;
+}
+
+.contenedorQuimico{
+	background-color: #21281b;
+	padding: 5px;
+  border-radius: 2px;
+  overflow:hidden;
+  display:inline-block;
+}
+
+.contenedorEx{
+  width : 97%;
+  padding: 10px;
+  height: 10%;
+  margin:10px;
   padding-bottom: 30px;
-	border-radius: 2px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: left;
 }
 
 .cuadrito{
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   font-family: arial;
   font-style: italic;
   text-align: center;
-  line-height: 40px;
+  line-height: center;
   position: relative;
-  font-weight: bolder;
-  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  color: #66c475;
   float: left;
   background-color: #3a424f;
   border-style: solid;
   border-width: 2px;
   border-color: gray;
   border-radius: 7px;
-  visibility: visible;
-}
-.cuadritoVacio{
-  width: 20px;
-  height: 40px;
-  font-family: arial;
-  font-style: italic;
-  text-align: center;
-  line-height: 40px;
-  font-weight: bolder;
-  background-color: #21281b;
-  float: left;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #21281b;
-}
-
-.loscuadritosN1{
-	background-color: #21281b;
   visibility: visible;
 }
