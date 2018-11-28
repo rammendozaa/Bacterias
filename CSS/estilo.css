@@ -29,7 +29,7 @@
 
 
 .contenedorAnim{
-	background-color: #21281b;
+	background-color: #cbcfd6;
 	padding: 5px;
   border-radius: 2px;
   overflow:hidden;
@@ -37,7 +37,7 @@
 }
 
 .contenedorQuimico{
-	background-color: #21281b;
+	background-color: #cbcfd6;
 	padding: 5px;
   border-radius: 2px;
   overflow:hidden;
@@ -56,8 +56,8 @@
 }
 
 .cuadrito{
-  width: 35px;
-  height: 35px;
+  width: 65px;
+  height: 65px;
   font-family: arial;
   font-style: italic;
   text-align: center;
@@ -73,4 +73,44 @@
   border-color: gray;
   border-radius: 7px;
   visibility: visible;
+}
+
+.cuadritoAnim{
+  width: 65px;
+  height: 65px;
+  font-family: arial;
+  font-style: italic;
+  text-align: center;
+  line-height: center;
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  color: #66c475;
+  float: left;
+  background-color: #3a424f;
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 7px;
+  visibility: hidden;
+}
+
+.cuadritoImg{
+  width: 65px;
+  height: 65px;
+  font-family: arial;
+  font-style: italic;
+  text-align: center;
+  line-height: center;
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  color: #66c475;
+  float: left;
+  background-color: #3a424f;
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 7px;
+  visibility: hidden;
 }
