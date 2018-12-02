@@ -47,11 +47,11 @@ var filas, columnas;
     });
     imagen = $('<img />',{
       style:'mix-blend-mode:multiply',
-      width:'45px',
-      height:'45px',
+      width:'36px',
+      height:'36px',
       id:'bacM1',
       class:'imgBact',
-      src:'bacteria.jpg'
+      src:'img/bacteria.jpg'
     });
     imagen.appendTo(transparent);
     transparent.appendTo(inicial);
@@ -68,11 +68,11 @@ var filas, columnas;
         });
         imagen = $('<img />',{
           style:'mix-blend-mode:multiply',
-          width:'45px',
-          height:'45px',
+          width:'36px',
+          height:'36px',
           id:'quimM1'+i+j,
           class:'imgQuim',
-          src:'quim.png'
+          src:'img/quim.png'
         });
         imagen.appendTo(transparent);
         transparent.appendTo(inicial);
@@ -83,6 +83,10 @@ var filas, columnas;
     $(".contenedorAnim").css("width", (columnas * 69) + "px");
     $(".contenedorAnim").css("height", (filas * 69) + "px");
     $(".contenedorAnim").css("visibility", "visible");
+    $("#equis1").text(filas.toString());
+    $("#equis2").text(filas.toString());
+    $("#ye1").text(columnas.toString());
+    $("#ye2").text(columnas.toString());
   }
 
   /* Recibe valores del usuario */
@@ -127,11 +131,11 @@ var filas, columnas;
     });
     imagen = $('<img />',{
       style:'mix-blend-mode:multiply',
-      width:'45px',
-      height:'45px',
+      width:'36px',
+      height:'36px',
       id:'bacM1',
       class:'imgBact',
-      src:'bacteria.jpg'
+      src:'img/bacteria.jpg'
     });
     imagen.appendTo(transparent);
     transparent.appendTo(inicial);
@@ -148,11 +152,11 @@ var filas, columnas;
         });
         imagen = $('<img />',{
           style:'mix-blend-mode:multiply',
-          width:'45px',
-          height:'45px',
+          width:'36px',
+          height:'36px',
           id:'quimM1'+i+j,
           class:'imgQuim',
-          src:'quim.png'
+          src:'img/quim.png'
         });
         imagen.appendTo(transparent);
         transparent.appendTo(inicial);
@@ -209,18 +213,18 @@ var filas, columnas;
       }
 
 
-      var inicial, transparetn, imagen;
+      var inicial, transparent, imagen;
       inicial = document.getElementById("matAn_0_0");
       transparent = $('<div >',{
         style:'background-color:rgba(0,0,0,0.01);z-index:3;visibility:hidden;',
         id:'bacM2'
       });
       imagen = $('<img />',{
-        style:'mix-blend-mode:multiply;z-index:4;',
-        width:'45px',
-        height:'45px',
+        style:'mix-blend-mode:multiply;z-index:5;',
+        width:'36px',
+        height:'36px',
         id:'miBacteria',
-        src:'bacteria.jpg'
+        src:'img/bacteria.jpg'
       });
       imagen.appendTo(transparent);
       transparent.appendTo(inicial);
@@ -238,9 +242,9 @@ var filas, columnas;
           });
           imagen = $('<img />',{
             style:'mix-blend-mode:multiply',
-            width:'45px',
-            height:'45px',
-            src:'quim.png'
+            width:'36px',
+            height:'36px',
+            src:'img/quim.png'
           });
           imagen.appendTo(transparent);
           transparent.appendTo(inicial);
@@ -381,9 +385,10 @@ var filas, columnas;
     };
     var bacterPosLeft = $("#miBacteria").position().left;
     var bacterPosTop = $("#miBacteria").position().top;
-    for(var rec = 0 ; rec < 2 ; rec++)
+    for(var rec = 0 ; rec < indice ; rec++)
     {
-      if(recorrido[rec] == 'r')
+      setTimeout(function(y){
+      if(recorrido[y] == 'r')
       {
 
         ini.ejeJ = ini.ejeJ + 1;
@@ -397,11 +402,28 @@ var filas, columnas;
         var bacterPos = $("#miBacteria").offset().left;
         /*var pos = $('#quimM2'+ fin.ejeI + fin.ejeJ).position().left;*/
         var pos = $('#quimM2'+ fin.ejeI + fin.ejeJ).offset().left + 12;
-        var id = setInterval(marcoPolo, 500);
+        var id = setInterval(marcoPolo, 25);
         function marcoPolo()
         {
           if(pos < bacterPos)
           {
+            $('#quimM2'+ fin.ejeI + fin.ejeJ).remove();
+            $("#bacM2").remove();
+            $("#miBacteria").remove();
+            inicial = document.getElementById('matAn_'+ fin.ejeI +'_'+ fin.ejeJ +'');
+            transparent = $('<div >',{
+              style:'background-color:rgba(0,0,0,0.01);z-index:5;visibility:visible;',
+              id:'bacM2'
+            });
+            imagen = $('<img />',{
+              style:'mix-blend-mode:multiply;z-index:6;',
+              width:'36px',
+              height:'36px',
+              id:'miBacteria',
+              src:'img/bacteria.jpg'
+            });
+            imagen.appendTo(transparent);
+            transparent.appendTo(inicial);
             clearInterval(id);
           }
           else
@@ -425,11 +447,28 @@ var filas, columnas;
         var bacterPos = $("#miBacteria").offset().top;
         /*var pos = $('#quimM2'+ fin.ejeI + fin.ejeJ).position().top;*/
         var pos = $('#quimM2'+ fin.ejeI + fin.ejeJ).offset().top;
-        var id = setInterval(marcoPolo, 500);
+        var id = setInterval(marcoPolo, 25);
         function marcoPolo()
         {
           if(pos < bacterPos)
           {
+            $('#quimM2'+ fin.ejeI + fin.ejeJ).remove();
+            $("#bacM2").remove();
+            $("#miBacteria").remove();
+            inicial = document.getElementById('matAn_'+ fin.ejeI +'_'+ fin.ejeJ +'');
+            transparent = $('<div >',{
+              style:'background-color:rgba(0,0,0,0.01);z-index:5;visibility:visible;',
+              id:'bacM2'
+            });
+            imagen = $('<img />',{
+              style:'mix-blend-mode:multiply;z-index:6;',
+              width:'36px',
+              height:'36px',
+              id:'miBacteria',
+              src:'img/bacteria.jpg'
+            });
+            imagen.appendTo(transparent);
+            transparent.appendTo(inicial);
             clearInterval(id);
           }
           else
@@ -440,8 +479,7 @@ var filas, columnas;
           }
         }
       }
-      $('#quimM2'+ fin.ejeI + fin.ejeJ).css("visibility", "hidden");
-      alert(fin.ejeI + " " + fin.ejeJ);
+    },rec * 2500, rec);
     }
 
   }
@@ -490,197 +528,6 @@ var filas, columnas;
     }
   }
 
-    /*
-    imgObj.style.position = 'absolute';
-    imgObj.style.top = 15 +'px';
-    imgObj.style.left = 15 + 'px';
-
-    moveIzq();
-  }
-
-  function moveIzq()
-  {
-    left = parseInt(imgObj.style.left, 10);
-    if(100 >= left)
-    {
-      imgObj.style.left = (left + 5) + 'px';
-      animate = setTimeout(function(){moveIzq();},100);
-    }
-    else
-      stop();
-  }
-
-  function movimientoDown()
-  {
-    imgObj = document.getElementById('miBacteria');
-    imgObj.style.position = 'absolute';
-    imgObj.style.top = 15 +'px';
-    imgObj.style.left = 15 + 'px';
-
-    moveDown();
-  }
-
-  function moveDown()
-  {
-    down = parseInt(imgObj.style.top, 10);
-    if(100 >= down)
-    {
-      imgObj.style.top = (down + 5) + 'px';
-      animate = setTimeout(function(){moveDown();},100);
-    }
-    else
-      stop();
-  }
-*/
-
   function stop(){
      clearTimeout(animate);
   }
-
-
-
-  /*
-      var ini = {
-        ejeI: 0,
-        ejeJ: 0
-      };
-      var fin = {
-        ejeI: 0,
-        ejeJ: 0
-      };
-      var arriba = document.getElementById("matAn_0_0");
-      var pos = 0;
-      var id = setInterval(frameMov, 10);
-      function frameMov()
-      {
-        if(pos == 69)
-        {
-          clearInterval(id);
-        }
-        else
-        {
-          pos++;
-          arriba.style.left = pos + 'px';
-        }
-      }
-
-
-
-      for(var rec = 0 ; rec < indice ; rec++)
-      {
-        if(recorrido[rec] = 'r')
-        {
-          alert("entra");
-          fin.ejeJ++;
-          var move = setInterval(movete(ini, fin), 1000);
-          ini.ejeI = fin.ejeI;
-          ini.ejeJ = fin.ejeJ;
-        }
-        else
-        {
-          fin.ejeI++;
-          var move = setInterval(movete(ini, fin), 1000);
-          ini.ejeI = fin.ejeI;
-          ini.ejeJ = fin.ejeJ;
-        }
-      }
-      */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //sincronizar con la aparicion de la otra matriz
-
-
-                function hacerVisible(casilla, imgAhi)
-                {
-                  $(casilla).css("visibility","visible");
-                  $(imgAhi).css("visibility", "visible");
-                  var valor = setInterval(function(){
-                    clearInterval(valor);
-                  },500);
-                }
-
-                function highlightCasillas(casilla1, casilla2)
-                {
-                  $(casilla1).css("border-color", "red");
-                  $(casilla2).css("border-color", "red");
-                  var valor = setInterval(function(){
-                    $(casilla1).css("border-color", "gray");
-                    $(casilla2).css("border-color", "gray");
-                    clearInterval(valor);
-                  },1500);
-                }
-
-                function highlightCasilla(casilla,letras,here)
-                {
-                  $(casilla).css("border-color", "red");
-                  $(letras).css("color", "red");
-                  $(here).text($(letras).text());
-                  var valor = setInterval(function(){
-                    $(casilla).css("border-color", "gray");
-                    $(letras).css("color", "black");
-                    clearInterval(valor);
-                  },500);
-                }
-
-
-              /*
-              function moverte(deAqui, aAca)
-              {
-                $(deAqui).clone().attr("id", "clon").appendTo(deAqui).css("z-index", "1");
-                var arriba = document.getElementById("clon");
-                var posArriba = $(deAqui).position();
-                var posAbajo = $(aAca).position();
-                var posT = 0;
-                var posLeft = 0;
-                var id = setInterval(movim, 10);
-                function movim(){
-                  if((Math.abs(posAbajo.top - posArriba.top - 40) - posT) < 1)
-                  {
-                    clearInterval(id);
-                    clearInterval(movate);
-                    $("#clon").remove();
-                    $(aAca).css("visibility","visible");
-                  }
-                  else
-                  {
-                    if((Math.abs(posAbajo.top - posArriba.top - 40) - posT) > 1)
-                    {
-                      posT++;
-                      arriba.style.top = posT + 'px';
-                    }
-                    var alinearY = (Math.abs(posAbajo.left - posArriba.left + posLeft));
-                    var izq = posAbajo.left - posArriba.left;
-                    if(alinearY > 1)
-                    {
-                      if(izq < 0)
-                      {
-                        posLeft++;
-                        arriba.style.left = -posLeft + 'px';
-                      }
-                      else if(izq >= 0)
-                      {
-                        posLeft--;
-                        arriba.style.left = -posLeft + 'px';
-                      }
-                    }
-                  }
-                }
-              }
-              */

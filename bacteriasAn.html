@@ -3,12 +3,16 @@
   </head>
     <title>Solucion Bacterias omegaUp</title>
     <link rel="stylesheet"  href="CSS/estilo.css">
+    <link rel="stylesheet"  href="CSS/bootstrap.css">
     <script src="JS/jquery.js"></script>
   	<script src="JS/action.js"></script>
+  	<script src="JS/bootstrap.js"></script>
   </head>
   <body>
-    <h1 style="text-align:center">Solución al Problema de Programación Dinámica : Bacterias</h1>
-    <h4 style="text-align:center"><a href="https://omegaup.com/arena/problem/mirBacterias#problems">Enunciado</a></h4>
+    <div id="container"
+      <h1 style="text-align:center">Solución al Problema de Programación Dinámica : Bacterias</h1>
+      <h4 style="text-align:center"><a href="https://omegaup.com/arena/problem/mirBacterias#problems">Enunciado</a></h4>
+    </div>
     <div class = "contenedorG">
       <div class = "contenedorCodigo">
         <h2 style = "color:#31548c">&nbsp;&nbsp;Código</h2>
@@ -50,6 +54,9 @@
         <br>
         <div id="codigoActual"></div>
         <hr>
+        <div class="arreglos">
+          <h3>compuestoQuimico[<span id="equis1">Filas</span>][<span id="ye1">Columnas</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caminoOptimo[<span id="equis2">Filas</span>][<span id="ye2">Columnas</span>]</h3>
+        </div>
         <div class="contenedorQuimico" id="matriz">
         </div>
         <div class="contenedorAnim" id="matrizAnimada">
