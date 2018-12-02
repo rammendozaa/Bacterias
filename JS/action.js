@@ -10,8 +10,8 @@ var filas, columnas;
     var limpiarAnim = document.getElementById("matrizAnimada");
     while(limpiarAnim.firstChild)
       limpiarAnim.removeChild(limpiarAnim.firstChild);
-    columnas = Math.floor(Math.random() * 8) + 2;
-    filas = Math.floor(Math.random() * 8) + 2;
+    columnas = Math.floor(Math.random() * 7) + 3;
+    filas = Math.floor(Math.random() * 5) + 3;
     $(".contenedorQuimico").css("width", (columnas * 63) + "px");
     $(".contenedorQuimico").css("height", (filas * 63) + "px");
     var contenedor = document.getElementById("matriz");
@@ -97,8 +97,8 @@ var filas, columnas;
     var limpiarAnim = document.getElementById("matrizAnimada");
     while(limpiarAnim.firstChild)
       limpiarAnim.removeChild(limpiarAnim.firstChild);
-    filas = prompt('Ingrese el número de filas:\n(Menor a 20 para una mejor visualizacion)');
-    columnas = prompt('Ingrese el número de columnas:\n(Menor a 20 para una mejor visualizacion)');
+    filas = prompt('Ingrese el número de filas:\n(Menor a 10 para una mejor visualizacion)');
+    columnas = prompt('Ingrese el número de columnas:\n(Menor a 10 para una mejor visualizacion)');
     for (var i = 0 ; i < filas ; i++)
     {
       matriz[i] = [];
@@ -179,8 +179,8 @@ var filas, columnas;
       celda.className = "cuadritoAnim";
       celda.innerText = $("#compuestoQ_0_0").text();
       $(celda).attr("id", 'matAn_0_0');
-      $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"inicializar\").innerText')
-      $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"')
+      $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"inicializar\").innerText');
+      $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"');
       $(celda).attr("data-toggle","tooltip");
       $(celda).attr("data-html", "true");
       $(celda).attr("title",'<em style="background-color:black;font-size:120%">caminoOptimo[0][0] = compuestoQuimico[0][0]</em>');
@@ -195,8 +195,8 @@ var filas, columnas;
         matrizAn[0][i] = matrizAn[0][i - 1] + matriz[0][i];
         celda.innerText = (matrizAn[0][i]).toString();
         $(celda).attr("id", 'matAn_0_'+ i +'');
-        $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"asigpB\").innerText')
-        $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"')
+        $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"asigpB\").innerText');
+        $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"');
         $(celda).attr("data-toggle","tooltip");
         $(celda).attr("data-html", "true");
         $(celda).attr("title",'<em style="background-color:black;font-size:120%">caminoOptimo[0]['+ i +'] = '+ matrizAn[0][i] +' = compuestoQuimico[0]['+ i +'] + caminoOptimo[0]['+ (i - 1) +']</em>');
@@ -217,8 +217,8 @@ var filas, columnas;
         $(celda).attr("id",'matAn_'+ i +'_0');
         $(celda).attr("data-toggle","tooltip");
         $(celda).attr("data-html", "true");
-        $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"asigsB\").innerText')
-        $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"')
+        $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"asigsB\").innerText');
+        $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"');
         $(celda).attr("title",'<em style="background-color:black;font-size:120%">caminoOptimo['+ i +'][0] = '+ matrizAn[i][0] +' = compuestoQuimico['+ i +'][0] + caminoOptimo['+ (i - 1) +'][0]</em>');
         fila.append(celda);
         for(var j = 1 ; j < columnas ; j++)
@@ -228,8 +228,8 @@ var filas, columnas;
           matrizAn[i][j] = Math.min(matrizAn[i][j - 1], matrizAn[i - 1][j]) + matriz[i][j];
           celda.innerText = matrizAn[i][j];
           $(celda).attr("id", 'matAn_'+ i +'_'+ j +'');
-          $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"DP\").innerText')
-          $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"')
+          $(celda).attr("onmouseover", 'document.getElementById(\"codigoActual\").innerText = document.getElementById(\"DP\").innerText');
+          $(celda).attr("onmouseout", 'document.getElementById(\"codigoActual\").innerText = \"Flota sobre alguna celda del arreglo caminoOptimo después de crearse para ver el código que calcula su valor.\"');
           $(celda).attr("data-toggle","tooltip");
           $(celda).attr("data-html", "true");
           $(celda).attr("title",'<em style="background-color:black;font-size:120%">caminoOptimo['+ i +']['+ j +'] = '+ matrizAn[i][j] +' = min(caminoOptimo['+ i +']['+ (j - 1) +'] , caminoOptimo['+ (i - 1) +']['+ j +']) + compuestoQuimico['+ i +']['+ j +']</em>');
@@ -283,46 +283,40 @@ var filas, columnas;
 
     var sumador, sumando, texto, aqui,tiempo;
     function aVer(){
+      var esperaC = columnas - 2;
+      var esperaF = filas - 2;
+      if(columnas == 2 || columnas == 3)
+      {
+        esperaC++;
+      }
+      if(filas == 2 || filas == 3)
+      {
+        esperaF++;
+      }
       var primerValor = document.getElementById("compuestoQ_0_0");
-      for(var i = 0 ; i <  columnas ; i++)
+      for(var i = 0 ; i < columnas ; i++)
       {
         setTimeout(function(y){
-        /*
-        sumador = document.getElementById('compuestoQ_0_'+ (i + 1)+'');
-        sumando = document.getElementById('matAn_0_'+ i +'');
-        $(sumador).css("border-color", "red");
-        $(sumando).css("border-color", "red");
-        texto = $("#asigpB");
-        $(texto).css("color", "red");
-        $(aqui).text($(texto).text());
-        $(sumando).css("border-color", "gray");
-        $(sumador).css("border-color", "gray");
-        $(texto).css("color", "gray");
-        */
-        $('#matAn_0_'+ y +'').css("visibility", "visible");
-        $('#quimM20'+ y +'').css("visibility", "visible");
-      }, i * 500, i);
+            $('#matAn_0_'+ y +'').css("visibility", "visible");
+            $('#quimM20'+ y +'').css("visibility", "visible");
+            if(y == 0)
+            {
+              document.getElementById("codigoActual").innerText = "Se inicializa la tabla con el valor en donde se empieza el recorrido.\n" + document.getElementById("inicializar").innerText;
+            }
+            else
+            {
+              document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente a la izquierda.\n" + document.getElementById("asigpB").innerText;
+            }
+          }, i * 1500, i);
       }
 
-      for(var i = 1 ; i <  filas ; i++)
+      for(var i = 1 ; i < filas ; i++)
       {
         setTimeout(function(y){
-
-        /*
-        sumador = document.getElementById('compuestoQ_'+ (i + 1)+'_0');
-        sumando = document.getElementById('matAn_'+ (i + 1) +'_0');
-        $(sumador).css("border-color", "red");
-        $(sumando).css("border-color", "red");
-        texto = $("#asigpB");
-        $(texto).css("color", "red");
-        $(aqui).text($(texto).text());
-        $(sumando).css("border-color", "gray");
-        $(sumador).css("border-color", "gray");
-        $(texto).css("color", "black");
-        */
         $('#matAn_'+ y +'_0').css("visibility", "visible");
         $('#quimM2'+ y +'0').css("visibility", "visible");
-      }, (i - 1) * 500 + (500 * columnas), i);
+        document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.\n" + document.getElementById("asigsB").innerText;
+      }, (i - 1) * 1500 + (1500 * columnas), i);
       }
 
       for(var i = 1 ; i < filas ; i++)
@@ -331,23 +325,12 @@ var filas, columnas;
         for(var j = 1 ; j < columnas ; j++)
         {
           setTimeout(function(a, b){
-          /*
-          sumador = document.getElementById('compuestoQ_'+ i +'_'+ j +'');
-          sumando = document.getElementById('matAn_'+ i +'_'+ j +'');
-          $(sumador).css("border-color", "red");
-          $(sumando).css("border-color", "red");
-          texto = $("#asigpB");
-          $(texto).css("color", "red");
-          $(aqui).text($(texto).text());
-          $(sumando).css("border-color", "gray");
-          $(sumador).css("border-color", "gray");
-          $(texto).css("color", "black");
-          */
           $('#matAn_'+ a +'_'+ b +'').css("visibility", "visible");
           $('#quimM2'+ a + b).css("visibility", "visible");
-        }, (500 * (filas - 2)) + (500 * (columnas - 2)) + (((j - 1) + (x - 1)) * 500), x,j);
+          document.getElementById("codigoActual").innerText = "Se toma al valor mínimo de las casillas a la izquierda y arriba de la tabla.\n" + document.getElementById("DP").innerText;
+        }, (1500 * (esperaF)) + (1500 * (esperaC)) + (((j - 1) + (x - 1)) * 1500), x,j);
         }
-      }, (i) * ((500 * (columnas - 2))), i);
+      }, (i) * ((1500 * (esperaC))), i);
       }
     }
 
@@ -428,6 +411,7 @@ var filas, columnas;
       ejeI: 0,
       ejeJ: 0
     };
+    document.getElementById("codigoActual").innerText = "Se recorre tomando los valores minimos de viajar hacía la derecha o hacía abajo.";
     var bacterPosLeft = $("#miBacteria").position().left;
     var bacterPosTop = $("#miBacteria").position().top;
     for(var rec = 0 ; rec < indice ; rec++)
