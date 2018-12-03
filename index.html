@@ -54,19 +54,15 @@
             data-toggle="tooltip" data-html="true"
             title="<em style='background-color:black;font-size:120%'>Se llena el arreglo que guarda el camino óptimo tomando la suma de la posición actual en el arreglo original y el valor máximo entre el recorrido por el camino directamente arriba o a directamente a la izquierda.</em>">
             caminoOptimo[i][j] = min(caminoOptimo[i][j - 1], caminoOptimo[i - 1][j]) + compuestoQuimico[i][j];</span></p>
-          <hr>
-          <div><h4 id="codigoActual" style="text-align:center;">Flota sobre alguna celda del arreglo "caminoOptimo" después de crearse para ver el código que calcula su valor.<h4></div>
-
       </div>
         <button type="button" class="btn btn-secondary" onclick="crearRandom()">Da click para crear una matriz aleatoria.</button>
         <button type="button" class="btn btn-secondary" onclick="ingresaValores()">Da click para ingresar tus propios valores.</button>
         <br><br>
         <button type="button" class="btn btn-dark" onclick="hacerBarrido()">Da click para llenar la tabla. (1)</button>
         <button type="button" class="btn btn-dark" onclick="guardaRecorrido()">Da click para ver a la bacteria "Bacterin" tomar el camino menos costoso. (2)</button>
-        <br>
-        <br>
         <hr>
         <div class="arreglos">
+          <div><h4 id="codigoActual" style="text-align:center;">Flota sobre alguna celda del arreglo "caminoOptimo" después de crearse para ver el código que calcula su valor.<h4></div>
           <h3 style="text-align:center;">compuestoQuimico[<span id="equis1">Filas</span>][<span id="ye1">Columnas</span>]&nbsp;&nbsp;&nbsp;caminoOptimo[<span id="equis2">Filas</span>][<span id="ye2">Columnas</span>]</h3>
           <div class="contenedorQuimico" id="matriz">
           </div>

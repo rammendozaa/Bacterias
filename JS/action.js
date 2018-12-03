@@ -285,6 +285,7 @@ var filas, columnas;
     function aVer(){
       var esperaC = columnas - 2;
       var esperaF = filas - 2;
+      var intervalo = 500;
       if(columnas == 2 || columnas == 3)
       {
         esperaC++;
@@ -293,6 +294,8 @@ var filas, columnas;
       {
         esperaF++;
       }
+      if(filas > 3 && columnas > 3)
+        intervalo = 1000;
       var primerValor = document.getElementById("compuestoQ_0_0");
       for(var i = 0 ; i < columnas ; i++)
       {
@@ -307,7 +310,7 @@ var filas, columnas;
             {
               document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente a la izquierda.\n" + document.getElementById("asigpB").innerText;
             }
-          }, i * 1500, i);
+          }, i * intervalo, i);
       }
 
       for(var i = 1 ; i < filas ; i++)
@@ -316,7 +319,7 @@ var filas, columnas;
         $('#matAn_'+ y +'_0').css("visibility", "visible");
         $('#quimM2'+ y +'0').css("visibility", "visible");
         document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.\n" + document.getElementById("asigsB").innerText;
-      }, (i - 1) * 1500 + (1500 * columnas), i);
+      }, (i - 1) * intervalo + (intervalo * columnas), i);
       }
 
       for(var i = 1 ; i < filas ; i++)
@@ -327,10 +330,10 @@ var filas, columnas;
           setTimeout(function(a, b){
           $('#matAn_'+ a +'_'+ b +'').css("visibility", "visible");
           $('#quimM2'+ a + b).css("visibility", "visible");
-          document.getElementById("codigoActual").innerText = "Se toma al valor mínimo de las casillas a la izquierda y arriba de la tabla.\n" + document.getElementById("DP").innerText;
-        }, (1500 * (esperaF)) + (1500 * (esperaC)) + (((j - 1) + (x - 1)) * 1500), x,j);
+          document.getElementById("codigoActual").innerText = "Se toma al valor mínimo de las casillas a la izquierda y arriba de la posición actual.\n" + document.getElementById("DP").innerText;
+        }, (intervalo * (esperaF)) + (intervalo * (esperaC)) + (((j - 1) + (x - 1)) * intervalo), x,j);
         }
-      }, (i) * ((1500 * (esperaC))), i);
+      }, (i) * ((intervalo * (esperaC))), i);
       }
     }
 
