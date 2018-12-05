@@ -4,6 +4,7 @@ var matrizAn = [];
 var filas, columnas;
   /* Se genera una matriz aleatorio con la que se puede trabajar */
   function crearRandom(){
+    $(".arreglos").css("visibility", "visible");
     var limpiarMatriz = document.getElementById("matriz");
     while(limpiarMatriz.firstChild)
       limpiarMatriz.removeChild(limpiarMatriz.firstChild);
@@ -285,7 +286,7 @@ var filas, columnas;
     function aVer(){
       var esperaC = columnas - 2;
       var esperaF = filas - 2;
-      var intervalo = 500;
+      var intervalo = 2000;
       if(columnas == 2 || columnas == 3)
       {
         esperaC++;
@@ -297,32 +298,81 @@ var filas, columnas;
       if(filas > 3 && columnas > 3)
         intervalo = 1000;
       var primerValor = document.getElementById("compuestoQ_0_0");
-      for(var i = 0 ; i < columnas ; i++)
+      $("#compuestoQ_0_0").css("border-color", "#6dce48");
+      $("#matAn_0_0").css("border-color", "#f79c6c");
+      for(var i = 0 ; i <= columnas ; i++)
       {
         setTimeout(function(y){
             $('#matAn_0_'+ y +'').css("visibility", "visible");
             $('#quimM20'+ y +'').css("visibility", "visible");
             if(y == 0)
             {
-              document.getElementById("codigoActual").innerText = "Se inicializa la tabla con el valor en donde se empieza el recorrido.\n" + document.getElementById("inicializar").innerText;
+              document.getElementById("codigoActual").innerHTML = "Se inicializa la tabla con el valor en donde se empieza el recorrido.<br><span style=\"color:#f79c6c;\">caminoOptimo[0][0]</span> = <span style=\"color:#6dce48;\">compuestoQuimico[0][0]</span>;";
+            }
+            else if(y == 1)
+            {
+              $('#compuestoQ_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ y +'').css("border-color", "#f79c6c");
+              $('#compuestoQ_0_'+ y +'').css("border-color", "#6dce48");
+              $('#matAn_0_'+ (y - 1) +'').css("border-color", "#2bc4ba");
+              document.getElementById("codigoActual").innerHTML = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.<br><span style=\"color:#f79c6c;\">caminoOptimo[0]["+ y +"]</span> = <span style=\"color:#6dce48;\">compuestoQuimico[0]["+ y +"]</span> + <span style=\"color:#2bc4ba;\">caminoOptimo[0]["+ (y - 1) +"]</span>;";
+            }
+            else if(y == columnas)
+            {
+              $('#compuestoQ_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ (y - 2) +'').css("border-color", "gray");
+              document.getElementById("codigoActual").innerText = "Se lleno la primer fila de la tabla.\n";
             }
             else
             {
-              document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente a la izquierda.\n" + document.getElementById("asigpB").innerText;
+              $('#compuestoQ_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ (y - 1) +'').css("border-color", "gray");
+              $('#matAn_0_'+ (y - 2) +'').css("border-color", "gray");
+              $('#matAn_0_'+ y +'').css("border-color", "#f79c6c");
+              $('#compuestoQ_0_'+ y +'').css("border-color", "#6dce48");
+              $('#matAn_0_'+ (y - 1) +'').css("border-color", "#2bc4ba");
+              document.getElementById("codigoActual").innerHTML = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.<br><span style=\"color:#f79c6c;\">caminoOptimo[0]["+ y +"]</span> = <span style=\"color:#6dce48;\">compuestoQuimico[0]["+ y +"]</span> + <span style=\"color:#2bc4ba;\">caminoOptimo[0]["+ (y - 1) +"]</span>;";
             }
           }, i * intervalo, i);
       }
 
-      for(var i = 1 ; i < filas ; i++)
+
+      for(var i = 1 ; i <= filas ; i++)
       {
         setTimeout(function(y){
         $('#matAn_'+ y +'_0').css("visibility", "visible");
         $('#quimM2'+ y +'0').css("visibility", "visible");
-        document.getElementById("codigoActual").innerText = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.\n" + document.getElementById("asigsB").innerText;
-      }, (i - 1) * intervalo + (intervalo * columnas), i);
+        if(y == 1)
+        {
+          $('#matAn_'+ y +'_0').css("border-color", "#f79c6c");
+          $('#compuestoQ_'+ y +'_0').css("border-color", "#6dce48");
+          $('#matAn_'+ (y - 1) +'_0').css("border-color", "#2bc4ba");
+          document.getElementById("codigoActual").innerHTML = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.<br><span style=\"color:#f79c6c;\">caminoOptimo["+ y +"][0]</span> = <span style=\"color:#6dce48;\">compuestoQuimico["+ y +"][0]</span> + <span style=\"color:#2bc4ba;\">caminoOptimo["+ (y - 1) +"][0]</span>;";
+        }
+        else if(y == filas)
+        {
+          $('#matAn_'+ (y - 1) +'_0').css("border-color", "gray");
+          $('#compuestoQ_'+ (y - 1) +'_0').css("border-color", "gray");
+          $('#matAn_'+ (y - 2) +'_0').css("border-color", "gray");
+          document.getElementById("codigoActual").innerText = "Se lleno la primer columna de la tabla.\n";
+        }
+        else
+        {
+          $('#matAn_'+ (y - 1) +'_0').css("border-color", "gray");
+          $('#compuestoQ_'+ (y - 1) +'_0').css("border-color", "gray");
+          $('#matAn_'+ (y - 2) +'_0').css("border-color", "gray");
+          $('#matAn_'+ y +'_0').css("border-color", "#f79c6c");
+          $('#compuestoQ_'+ y +'_0').css("border-color", "#6dce48");
+          $('#matAn_'+ (y - 1) +'_0').css("border-color", "#2bc4ba");
+
+          document.getElementById("codigoActual").innerHTML = "Se hace un barrido sumando el valor actual del arreglo con el anterior de la tabla directamente arriba.<br><span style=\"color:#f79c6c;\">caminoOptimo["+ y +"][0]</span> = <span style=\"color:#6dce48;\">compuestoQuimico["+ y +"][0]</span> + <span style=\"color:#2bc4ba;\">caminoOptimo["+ (y - 1) +"][0]</span>;";
+        }
+      }, (i) * intervalo + (intervalo * columnas), i);
       }
 
-      for(var i = 1 ; i < filas ; i++)
+      for(var i = 1 ; i <= filas ; i++)
       {
         setTimeout(function(x){
         for(var j = 1 ; j < columnas ; j++)
@@ -330,11 +380,49 @@ var filas, columnas;
           setTimeout(function(a, b){
           $('#matAn_'+ a +'_'+ b +'').css("visibility", "visible");
           $('#quimM2'+ a + b).css("visibility", "visible");
-          document.getElementById("codigoActual").innerText = "Se toma al valor mínimo de las casillas a la izquierda y arriba de la posición actual.\n" + document.getElementById("DP").innerText;
+
+          if(b == 1)
+          {
+            $('#matAn_'+ (a - 1) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 1) +'_'+ (columnas - 2) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 2) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+            $('#compuestoQ_'+ (a - 1) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+          }
+          if(a == filas)
+          {
+            $('#matAn_'+ (a - 1) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 1) +'_'+ (columnas - 2) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 2) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+            $('#compuestoQ_'+ (a - 1) +'_'+ (columnas - 1) +'').css("border-color", "gray");
+            document.getElementById("codigoActual").innerText = "Se llenaron las celdas restantes de la tabla.\n";
+          }
+          else
+          {
+            $('#compuestoQ_'+ (a - 1) +'_'+ (b - 1) +'').css("border-color", "gray");
+            $('#compuestoQ_'+ (a) +'_'+ (b - 1) +'').css("border-color", "gray");
+            $('#compuestoQ_'+ (a - 1) +'_'+ (b) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 1) +'_'+ (b - 1) +'').css("border-color", "gray");
+            $('#matAn_'+ (a) +'_'+ (b - 1) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 1) +'_'+ (b) +'').css("border-color", "gray");
+
+            $('#matAn_'+ (a - 2) +'_'+ b +'').css("border-color", "gray");
+            $('#matAn_'+ a +'_'+ (b - 2) +'').css("border-color", "gray");
+            $('#matAn_'+ (a - 2) +'_'+ (b - 2) +'').css("border-color", "gray");
+
+
+
+            $('#matAn_'+ a +'_'+ b +'').css("border-color", "#f79c6c");
+            $('#compuestoQ_'+ a +'_'+ b +'').css("border-color", "#6dce48");
+            $('#matAn_'+ (a - 1) +'_'+ b +'').css("border-color", "#af646f");
+            $('#matAn_'+ a +'_'+ (b - 1) +'').css("border-color", "#af646f");
+
+            document.getElementById("codigoActual").innerHTML = "Se toma al valor mínimo de las casillas a la izquierda y arriba de la posición actual.<br><span style=\"color:#f79c6c;\">caminoOptimo["+ a +"]["+ b +"]</span> = min(<span style=\"color:#af646f;\">caminoOptimo["+ a +"]["+ (b - 1) +"]</span>, <span style=\"color:#af646f;\">caminoOptimo["+ (a - 1) + "]["+ b +"]</span>) + <span style=\"color:#6dce48;\">compuestoQuimico["+ a +"]["+ b +"]</span>;";
+          }
         }, (intervalo * (esperaF)) + (intervalo * (esperaC)) + (((j - 1) + (x - 1)) * intervalo), x,j);
         }
       }, (i) * ((intervalo * (esperaC))), i);
-      }
+    }
+
     }
 
 
