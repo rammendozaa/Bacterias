@@ -63,6 +63,11 @@
         <hr>
         <div class = "contenedorCodigo">
                 <h2 style = "color:#31548c">&nbsp;&nbsp;Código</h2>
+                  <p style="margin-top: 0.6em; margin-bottom: 0em;"><span style='cursor:pointer;font-family:"Courier New";font-size:120%'
+                    data-toggle="tooltip" data-html="true"
+                    title="<em style='background-color:black;font-size:120%'>La función recibe dos enteros N y M que representan las filas y columnas de la tabla. Regresa un entero que es el costo del mínimo recorrido. (caminoOptimo)</em>">
+                    int bacteriasRecorridoMinimo(int N, int M)</span></p>
+                  <p style="margin-top: 0.6em; margin-bottom: 0em;"><span style='font-family:"Courier New";font-size:120%;'>{</span></p>
                   <p style="margin-top: 0.6em; margin-bottom: 0em;"><span style='padding-left:10px;cursor:pointer;font-family:"Courier New";font-size:120%' id="inicializar"
                     data-toggle="tooltip" data-html="true"
                     title="<em style='background-color:black;font-size:120%'>Se inicializa la matriz que guarda los valores del camino óptimo con el valor de la casilla inicial. (caminoOptimo)</em>">
@@ -83,6 +88,12 @@
                     data-toggle="tooltip" data-html="true"
                     title="<em style='background-color:black;font-size:120%'>Se llena el arreglo que guarda el camino óptimo tomando la suma de la posición actual en el arreglo original y el valor máximo entre el recorrido por el camino directamente arriba o a directamente a la izquierda.</em>">
                     caminoOptimo[i][j] = min(caminoOptimo[i][j - 1], caminoOptimo[i - 1][j]) + compuestoQuimico[i][j];</span></p>
+                  <p style="margin-top: 0.6em; margin-bottom: 0em;"><span style='cursor:pointer;font-family:"Courier New";font-size:120%'
+                    data-toggle="tooltip" data-html="true"
+                    title="<em style='background-color:black;font-size:120%'>El resultado se encuentra en la última posición del recorrido, o sea, en la última casilla de la tabla. </em>">
+                    return caminoOptimo[N - 1][M - 1]</span></p>
+                    <p style="margin-top: 0.6em; margin-bottom: 0em;"><span style='font-family:"Courier New";font-size:120%;'>}</span></p>
+
               </div>
 
     </div>

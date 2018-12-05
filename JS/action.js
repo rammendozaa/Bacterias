@@ -92,6 +92,7 @@ var filas, columnas;
 
   /* Recibe valores del usuario */
   function ingresaValores(){
+    $(".arreglos").css("visibility", "visible");
     var limpiarMatriz = document.getElementById("matriz");
     while(limpiarMatriz.firstChild)
       limpiarMatriz.removeChild(limpiarMatriz.firstChild);
@@ -170,6 +171,11 @@ var filas, columnas;
     $(".contenedorAnim").css("width", (columnas * 63) + "px");
     $(".contenedorAnim").css("height", (filas * 63) + "px");
     $(".contenedorAnim").css("visibility", "visible");
+    $("#equis1").text(filas.toString());
+    $("#equis2").text(filas.toString());
+    $("#ye1").text(columnas.toString());
+    $("#ye2").text(columnas.toString());
+
   }
 
     function hacerBarrido(){
@@ -394,7 +400,7 @@ var filas, columnas;
             $('#matAn_'+ (a - 1) +'_'+ (columnas - 2) +'').css("border-color", "gray");
             $('#matAn_'+ (a - 2) +'_'+ (columnas - 1) +'').css("border-color", "gray");
             $('#compuestoQ_'+ (a - 1) +'_'+ (columnas - 1) +'').css("border-color", "gray");
-            document.getElementById("codigoActual").innerText = "Se llenaron las celdas restantes de la tabla.\n";
+            document.getElementById("codigoActual").innerHTML = "Se llenaron las celdas restantes de la tabla. <br>El resultado es = "+ matrizAn[filas - 1][columnas - 1] +", que se encuentra en caminoOptimo["+ (filas - 1) + "]["+ (columnas - 1) +"].\n";
           }
           else
           {
